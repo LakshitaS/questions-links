@@ -11,6 +11,7 @@ bool checkPalindrome(string s)
             
         }
     }
+    //instead tolower(s[i])==tolower(s[j]) can also be used.
 
     int i = 0;
     int j = s.length() - 1;
