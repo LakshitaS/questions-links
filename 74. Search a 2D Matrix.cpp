@@ -16,28 +16,22 @@ public:
         int row = matrix.size();
         int col = matrix[0].size();
         
-        int start = 0;
-        int end  = row*col-1;
-        
-        int mid = start + (end-start)/2;
-        
-        while(start<=end) {
-            
-            int element = matrix[mid/col][mid%col];
-            
-            if(element == target) {
-                return 1;
+        int i=0;int j=row*col-1;
+        int mid=i +(j-i)/2;
+        while(i<=j){
+            int el=matrix[mid/col][mid%col];
+            if(el==target){
+                return true;
             }
-            
-            if(element < target) {
-                start = mid+1;
-            }
-            else
-            {
-                end = mid-1;
-            }
-             mid = start + (end-start)/2;    
+            if(el<target){
+                i=mid+1;
+            }else{
+                j=mid-1;
+            }     
+            mid=i +(j-i)/2;       
         }
+        
         return 0;
     }
 };
+ 
